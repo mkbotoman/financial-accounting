@@ -3,7 +3,19 @@ import { flashcardContent } from '../flashcardContent.js';
 import store from '../index.js';
 import { connect } from 'react-redux';
 
-export default class Flashcard extends Component {
+const flashCardStyle = {
+  fontSize: '24px'
+}
+
+const questionStyle =  {
+  minHeight: '20vh'
+}
+
+const answerStyle =  {
+  minHeight: '30vh'
+}
+
+export class Flashcard extends Component {
     constructor(props) {
         super(props);
         if (!store.getState().changeState.nextCard) {
@@ -18,25 +30,17 @@ export default class Flashcard extends Component {
         this.props.answerHidden.answerHidden = store.getState().changeState.answerHidden;
 
         return (
-            <section id="flashcard">
-                <article className="card">
-                    <div className="question-container">
-                        <div className="question">{flashcardContent[this.randomNumber].question}</div>
+            <section id="flashcard" style={flashCardStyle}>
+                <article>
+                    <div style={questionStyle}>
+                        <div>{flashcardContent[this.randomNumber].question}</div>
                     </div>
-                    <div className="answer-container">
-                        <div className="answer" style={{display: this.props.answerHidden.answerHidden ? 'none' : 'block'}}>
+                    <div style={answerStyle}>
+                        <div style={{display: this.props.answerHidden.answerHidden ? 'none' : 'block'}}>
                             {flashcardContent[this.randomNumber].answer}
-                            <small>
-                                <a href={flashcardContent[this.randomNumber].sourceUrl}>
-                                    {flashcardContent[this.randomNumber].source}
-                                </a>
-                            </small>
                         </div>
                     </div>
                 </article>
-                <div className="card-stack-1"></div>
-                <div className="card-stack-2"></div>
-                <div className="card-stack-3"></div>
             </section>
         )
     }
@@ -44,7 +48,7 @@ export default class Flashcard extends Component {
 
 
 function mapStateToProps(state) {
-    return { answerHidden: state.changeState } 
+    return { answerHidden: state.changeState }
 }
 
 export default connect(mapStateToProps)(Flashcard)
