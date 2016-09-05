@@ -20381,7 +20381,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var containerStyles = {
   background: 'white',
-  height: '80vh',
+  minHeight: '80vh',
   width: '80vw',
   margin: '0 auto',
   borderRadius: '4'
