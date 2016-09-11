@@ -88,7 +88,7 @@ export const flashcardContent = [
       answer: "Common stock, additional paid-in capital, treasury stock, retained earnings, Accumulated other comprehensive income or loss"
     }, {
       question: "When should revenue be recorded?",
-      answer: ", in an amount that reflects how much the company expects to be entitled from the transfer—even if there is not an immediate increase in cash."
+      answer: "When persuasive evidene of an exhange, delivery of goods and services has occured, price is fixed or determinable and collectibility is assured, in an amount that reflects how much the company expects to be entitled from the transfer—even if there is not an immediate increase in cash."
     }, {
       question: "What is accrual accounting?",
       answer: "The practice of recognizing revenues when earned through the company’s operations and recognizing expenses as the assets used and obli-gations incurred in carrying out those operations."
